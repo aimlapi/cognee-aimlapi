@@ -467,6 +467,20 @@ LLM_ENDPOINT="https://openrouter.ai/api/v1"
 LLM_API_KEY="your_api_key"
 ```
 
+#### aimlapi.com
+```bash
+LLM_PROVIDER="custom"
+LLM_MODEL="aiml/openai/gpt-4o-mini"
+LLM_ENDPOINT="https://api.aimlapi.com/v1"
+LLM_API_KEY="your_aimlapi_key"  # not AIML_API_KEY: cognee passes the key to litellm itself
+# Embeddings are separate; no "aiml/" prefix (litellm has no aiml embedding route)
+EMBEDDING_PROVIDER="custom"
+EMBEDDING_MODEL="openai/text-embedding-3-large"
+EMBEDDING_ENDPOINT="https://api.aimlapi.com/v1"
+EMBEDDING_API_KEY="your_aimlapi_key"
+EMBEDDING_DIMENSIONS=3072
+```
+
 #### AWS Bedrock (requires aws extra)
 ```bash
 LLM_PROVIDER="bedrock"

@@ -1,6 +1,6 @@
 ---
 name: cognee-integrations
-description: Use when the user wants to connect cognee to external services — switching LLM or embedding providers (OpenAI, Azure, Gemini, Anthropic, Ollama, OpenRouter), changing databases (Postgres, PGVector, Neo4j, Neptune, Turso), S3 storage, or the MCP server for IDE integration.
+description: Use when the user wants to connect cognee to external services — switching LLM or embedding providers (OpenAI, Azure, Gemini, Anthropic, Ollama, OpenRouter, aimlapi.com), changing databases (Postgres, PGVector, Neo4j, Neptune, Turso), S3 storage, or the MCP server for IDE integration.
 ---
 
 # Set up cognee integrations
@@ -21,6 +21,7 @@ Default is OpenAI (`LLM_API_KEY` is all you need). To switch, set
 - **Anthropic** (`cognee[anthropic]`): `LLM_PROVIDER=anthropic`, model e.g. `claude-3-5-sonnet-20241022`.
 - **Ollama, local** (`cognee[ollama]`): `LLM_PROVIDER=ollama`, `LLM_ENDPOINT=http://localhost:11434/v1`, and set the embedding block + `HUGGINGFACE_TOKENIZER` too.
 - **Custom / OpenRouter / vLLM**: `LLM_PROVIDER=custom` with the provider's OpenAI-compatible endpoint.
+- **aimlapi.com**: `LLM_PROVIDER=custom`, `LLM_MODEL=aiml/<catalogue-id>`, `LLM_ENDPOINT=https://api.aimlapi.com/v1`. Embeddings drop the `aiml/` prefix (litellm has no aiml embedding route) and rely on `EMBEDDING_ENDPOINT` instead.
 - **AWS Bedrock** (`cognee[aws]`): `LLM_PROVIDER=bedrock` + AWS credentials/region.
 
 **The classic trap**: LLM and embeddings are configured independently

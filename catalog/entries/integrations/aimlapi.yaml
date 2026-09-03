@@ -1,0 +1,27 @@
+id: aimlapi
+title: aimlapi.com as the cognee LLM provider
+kind: integration
+stack: llm-provider
+tags:
+  - aimlapi
+  - llm-provider
+  - openai-compatible
+  - litellm
+  - embeddings
+summary: Run cognee's LLM and embedding calls on aimlapi.com, an OpenAI-compatible gateway, using litellm's built-in "aiml/" route and no extra install.
+what_youll_build: A cognee pipeline that builds a knowledge graph and answers a recall query with both extraction and embeddings served by aimlapi.com.
+quickstart: |
+  git clone https://github.com/topoteretes/cognee.git
+  cd cognee
+  uv pip install cognee
+  export LLM_API_KEY=your_aimlapi_key
+  python examples/guides/aimlapi_example.py
+expected_output: |
+  A "Knowledge graph built successfully" line followed by a recall answer
+  synthesized from the sample text. The LLM call is routed through litellm's
+  aiml/ prefix and the embedding call through the aimlapi.com endpoint, so no
+  OpenAI key is involved.
+difficulty: easy
+repo: topoteretes/cognee
+path: examples/guides/aimlapi_example.py
+example_path: examples/guides/aimlapi_example.py
