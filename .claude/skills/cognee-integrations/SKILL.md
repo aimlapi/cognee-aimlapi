@@ -16,12 +16,12 @@ Default is OpenAI (`LLM_API_KEY` is all you need). To switch, set
 `LLM_PROVIDER`, `LLM_MODEL`, `LLM_API_KEY`, and (where relevant)
 `LLM_ENDPOINT` / `LLM_API_VERSION`:
 
+- **aimlapi.com**: `LLM_PROVIDER=custom`, `LLM_MODEL=aiml/<catalogue-id>`, `LLM_ENDPOINT=https://api.aimlapi.com/v1`. Embeddings drop the `aiml/` prefix (litellm has no aiml embedding route) and rely on `EMBEDDING_ENDPOINT` instead.
 - **Azure OpenAI**: `LLM_PROVIDER=azure`, `LLM_MODEL=azure/gpt-4o-mini`, endpoint + api version required.
 - **Gemini** (no extra needed): `LLM_PROVIDER=gemini`, `LLM_MODEL=gemini/gemini-2.0-flash-exp`.
 - **Anthropic** (`cognee[anthropic]`): `LLM_PROVIDER=anthropic`, model e.g. `claude-3-5-sonnet-20241022`.
 - **Ollama, local** (`cognee[ollama]`): `LLM_PROVIDER=ollama`, `LLM_ENDPOINT=http://localhost:11434/v1`, and set the embedding block + `HUGGINGFACE_TOKENIZER` too.
 - **Custom / OpenRouter / vLLM**: `LLM_PROVIDER=custom` with the provider's OpenAI-compatible endpoint.
-- **aimlapi.com**: `LLM_PROVIDER=custom`, `LLM_MODEL=aiml/<catalogue-id>`, `LLM_ENDPOINT=https://api.aimlapi.com/v1`. Embeddings drop the `aiml/` prefix (litellm has no aiml embedding route) and rely on `EMBEDDING_ENDPOINT` instead.
 - **AWS Bedrock** (`cognee[aws]`): `LLM_PROVIDER=bedrock` + AWS credentials/region.
 
 **The classic trap**: LLM and embeddings are configured independently
